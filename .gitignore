@@ -14,3 +14,5 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
+/.c9/metadata/preview-/README.md
+/.c9/metadata/tab2

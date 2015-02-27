@@ -1,147 +1,41 @@
-<div class="navbar-collapse collapse ng-scope ng-isolate-scope" collapse="navbarCollapsed" ng-init="navbarCollapsed = true" off-click="navbarCollapsed = true" off-click-if="!navbarCollapsed" off-click-filter="#menu-toggler" style="height: 0px;">
-<ul class="nav navbar-right ng-isolate-scope" ct-fullheight="window" data-ct-fullheight-exclusion="header" data-ct-fullheight-if="isSmallDevice" style="height: auto;">
-	<!-- start: MESSAGES DROPDOWN -->
-	<li class="dropdown" dropdown="" on-toggle="toggled(open)">
-		<a href="" class="dropdown-toggle" dropdown-toggle="" aria-haspopup="true" aria-expanded="false">
-			<span class="dot-badge partition-red"></span> <i class="ti-comment"></i> <span translate="topbar.messages.MAIN" class="ng-scope">Messages</span>
-		</a>
-		<ul class="dropdown-menu dropdown-light dropdown-messages dropdown-large">
-			<li>
-				<span class="dropdown-header ng-scope" translate="topbar.messages.HEADER">Unread messages</span>
-			</li>
-			<li>
-				<div class="drop-down-wrapper ps-container">
-					<ul>
-						<li class="unread">
-							<a href="javascript:;" class="unread">
-								<div class="clearfix">
-									<div class="thread-image">
-										<img src="./assets/images/avatar-2.jpg" alt="">
-									</div>
-									<div class="thread-content">
-										<span class="author">Nicole Bell</span>
-										<span class="preview">Duis mollis, est non commodo luctus, nisi erat porttitor ligula...</span>
-										<span class="time"> Just Now</span>
-									</div>
-								</div>
-							</a>
-						</li>
-						<li>
-							<a href="javascript:;" class="unread">
-								<div class="clearfix">
-									<div class="thread-image">
-										<img src="./assets/images/avatar-3.jpg" alt="">
-									</div>
-									<div class="thread-content">
-										<span class="author">Steven Thompson</span>
-										<span class="preview">Duis mollis, est non commodo luctus, nisi erat porttitor ligula...</span>
-										<span class="time">8 hrs</span>
-									</div>
-								</div>
-							</a>
-						</li>
-						<li>
-							<a href="javascript:;">
-								<div class="clearfix">
-									<div class="thread-image">
-										<img src="./assets/images/avatar-5.jpg" alt="">
-									</div>
-									<div class="thread-content">
-										<span class="author">Kenneth Ross</span>
-										<span class="preview">Duis mollis, est non commodo luctus, nisi erat porttitor ligula...</span>
-										<span class="time">14 hrs</span>
-									</div>
-								</div>
-							</a>
-						</li>
-					</ul>
-				</div>
-			</li>
-			<li class="view-all">
-				<a href="#" translate="topbar.messages.SEEALL" class="ng-scope">See All</a>
-			</li>
-		</ul>
-	</li>
-	<!-- end: MESSAGES DROPDOWN -->
-	<!-- start: ACTIVITIES DROPDOWN -->
-	<li class="dropdown" dropdown="" on-toggle="toggled(open)">
-		<a href="" class="dropdown-toggle" dropdown-toggle="" aria-haspopup="true" aria-expanded="false">
-			<i class="ti-check-box"></i> <span translate="topbar.activities.MAIN" class="ng-scope">Activities</span>
-		</a>
-		<ul class="dropdown-menu dropdown-light dropdown-messages dropdown-large">
-			<li>
-				<span class="dropdown-header ng-scope" translate="topbar.activities.HEADER">You have new notifications</span>
-			</li>
-			<li>
-				<div class="drop-down-wrapper ps-container">
-					<div class="list-group no-margin">
-						<a class="media list-group-item" href="">
-							<img class="img-circle" alt="..." src="assets/images/avatar-1.jpg">
-							<span class="media-body block no-margin"> Use awesome animate.css <small class="block text-grey">10 minutes ago</small> </span>
-						</a>
-						<a class="media list-group-item" href="">
-							<span class="media-body block no-margin"> 1.0 initial released <small class="block text-grey">1 hour ago</small> </span>
-						</a>
-					</div>
-				</div>
-			</li>
-			<li class="view-all">
-				<a href="#" translate="topbar.activities.SEEALL" class="ng-scope">See All</a>
-			</li>
-		</ul>
-	</li>
-	<!-- end: ACTIVITIES DROPDOWN -->
-	<!-- start: LANGUAGE SWITCHER -->
-	<li class="dropdown" dropdown="" on-toggle="toggled(open)">
-		<a href="" class="dropdown-toggle ng-binding" dropdown-toggle="" aria-haspopup="true" aria-expanded="false">
-			<i class="ti-world"></i> English
-		</a>
-		<ul role="menu" class="dropdown-menu dropdown-light fadeInUpShort">
-			<!-- ngRepeat: (localeId, langName) in language.available --><li ng-repeat="(localeId, langName) in language.available" class="ng-scope">
-			<a ng-click="language.set(localeId, $event)" href="#" class="menu-toggler ng-binding">
-				Deutsch
-			</a>
-		</li><!-- end ngRepeat: (localeId, langName) in language.available --><li ng-repeat="(localeId, langName) in language.available" class="ng-scope">
-		<a ng-click="language.set(localeId, $event)" href="#" class="menu-toggler ng-binding">
-			English
-		</a>
-	</li><!-- end ngRepeat: (localeId, langName) in language.available --><li ng-repeat="(localeId, langName) in language.available" class="ng-scope">
-	<a ng-click="language.set(localeId, $event)" href="#" class="menu-toggler ng-binding">
-		Italiano
-	</a>
-</li><!-- end ngRepeat: (localeId, langName) in language.available -->
-</ul>
-</li>
-<!-- start: LANGUAGE SWITCHER -->
-<!-- start: USER OPTIONS DROPDOWN -->
-<li class="dropdown current-user" dropdown="" on-toggle="toggled(open)">
-<a href="" class="dropdown-toggle" dropdown-toggle="" aria-haspopup="true" aria-expanded="false">
-	<img src="assets/images/avatar-1.jpg" alt="Peter"> <span class="username ng-binding">Peter <i class="ti-angle-down"></i></span>
-</a>
-<ul class="dropdown-menu dropdown-dark">
-	<li>
-		<a ui-sref="app.pages.user" translate="topbar.user.PROFILE" class="ng-scope" href="#/app/pages/user">My Profile</a>
-	</li>
-	<li>
-		<a ui-sref="app.pages.calendar" translate="topbar.user.CALENDAR" class="ng-scope" href="#/app/pages/calendar">My Calendar</a>
-	</li>
-	<li>
-		<a ui-sref="app.pages.messages" translate="topbar.user.MESSAGES" class="ng-scope" href="#/app/pages/messages">My Messages</a>
-	</li>
-	<li>
-		<a ui-sref="login.lockscreen" translate="topbar.user.LOCKSCREEN" class="ng-scope" href="#/login/lock">Lock Screen</a>
-	</li>
-	<li>
-		<a ui-sref="login.signin" translate="topbar.user.LOGOUT" class="ng-scope" href="#/login/signin">Log Out</a>
-	</li>
-</ul>
-</li>
-<!-- end: USER OPTIONS DROPDOWN -->
-</ul>
-<!-- start: MENU TOGGLER FOR MOBILE DEVICES -->
-<div class="close-handle visible-xs-block menu-toggler" ng-click="navbarCollapsed = true">
-<div class="arrow-left"></div>
-<div class="arrow-right"></div>
-</div>
-<!-- end: MENU TOGGLER FOR MOBILE DEVICES -->
-</div>
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Brand</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      
+    
+      <ul class="nav navbar-nav navbar-right">
+       <li><%= link_to 'Home', root_path %></li>
+         <li><%= link_to 'About Me', home_about_path %></li>
+         <li><%= link_to 'Edit Profile', edit_user_registration_path %></li>
+         <% if user_signed_in? %>
+           <li><%= link_to 'Logout', destroy_user_session_path, method: :delete %></li>
+         <% else %>
+           <li><%= link_to 'Login', new_user_session_path %></li>
+           <li><%= link_to 'Join', new_user_registration_path %></li>
+         <% end %>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
