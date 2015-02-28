@@ -7,21 +7,26 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  
-<%= render 'home/header' %>
+    
+<div id="wrapper">
+    <!-- Menu principal -- _header.html -->
+    <%= render 'home/header' %>
+    <!-- fim -->
+    <div id="page-wrapper">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12">
+                    <% flash.each do |name, msg| %>
+                    <%= content_tag(:div, msg, class: "alert alert-info")%>
+                    <% end %>
+                    
+                    <%= yield %> <!-- variável que renderiza outras paginas do rails -->
 
-
-
-<div class="container">
-  
-  <% flash.each do |name, msg| %>
-      <%= content_tag(:div, msg, class: "alert alert-info")%>
-  <% end %>
-  
-<%= yield %> 
-
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
-
-
 </body>
+
 </html>
